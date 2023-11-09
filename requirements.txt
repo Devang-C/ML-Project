@@ -2,6 +2,8 @@ pandas
 numpy
 matplotlib
 seaborn
-
-# this automatically triggers setup.py file
--e .
+scikit-learn
+catboost
+xgboost
+# this automatically triggers setup.py file. only use the -e . while building the entire package. otherwise while install libraries using pip install -r requirements.txt comment the below line out
+# -e .
