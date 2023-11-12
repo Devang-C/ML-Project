@@ -16,6 +16,9 @@ from src.components.data_transformation import DataTransformation
 from src.components.data_transformation import DataTransformationConfig
 
 
+from src.components.model_trainer import Model_Trainer_Config
+from src.components.model_trainer import Model_Trainer
+
 # Whenever we are performing data ingestion components there should be some inputs that will be required by the data ingestion component
 # The input can be where to save train data, test data or where to save raw data and so on
 
@@ -66,4 +69,10 @@ if __name__=="__main__":
 
     # we have combined data ingestion and after that we have combined data transformation.
     data_transformation = DataTransformation()
-    data_transformation.initiate_data_transformation(train_data,test_data)
+    train_array,test_array,_= data_transformation.initiate_data_transformation(train_data,test_data)
+
+    modelTrainer = Model_Trainer()
+    print(modelTrainer.initiate_model_trainer(train_array,test_array))
+
+
+
